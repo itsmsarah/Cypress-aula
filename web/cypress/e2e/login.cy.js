@@ -27,8 +27,8 @@ describe('template spec', () => {
     cy.visit('http://localhost:3000') // testando se abre nosso site
    // pegando o seletor do email que é um id nesse caso e o que ele vai receber
 
-    cy.get('#email').type("sarinha@gmail.com")
-    cy.get('#password').type("sarah")
+    cy.get('#email').type("4dt@gmail.com")
+    cy.get('#password').type("4DT")
 
     cy.wait(3000) // o tempo de delay que eu quero
     
