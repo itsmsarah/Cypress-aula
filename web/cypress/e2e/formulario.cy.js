@@ -37,10 +37,14 @@ describe('template spec', () => {
       cy.get('#details').type("Quero ir embora")
 
       cy.get('#technologies').type("naosei").type('{enter}')
+      cy.get('#technologies').type("sla").type('{enter}')
+      cy.get('#technologies').type("juroqnnda").type('{enter}')
 
       cy.contains('span', 'naosei').should('exist')
 
-        cy.contains("label","Li e aceito os termos de uso *" ,{timeout:10000}).find("input").should("be.checked")
+      cy.contains("label","Li e aceito os termos de uso *").find("input").check().should("be.checked")
+
+      cy.contains('button', 'Enviar formulário').click()
       
   })
 })
