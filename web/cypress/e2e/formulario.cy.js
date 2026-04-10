@@ -1,12 +1,6 @@
 describe('template spec', () => {
   it('passes', () => {
-    cy.visit('http://localhost:3000')
-    cy.viewport(1400, 900)//definir o tamano da tela
-    cy.visit('http://localhost:3000') // testando se abre nosso site
-    cy.get('#email').type("4dt@gmail.com") // pegando o seletor do email que é um id nesse caso e o que ele vai receber
-    cy.get('#password').type("4DT")
-
-    cy.contains('button', 'Entrar').click()
+   cy.login('4dt@gmail.com', '4dt')
 
     cy.contains('h4', 'Formulário').click()
 
@@ -58,8 +52,8 @@ describe('template spec', () => {
 
     cy.contains('h4', 'Formulário').click()
     cy.contains('button', 'Enviar formulário').click()
-    cy.contains('Digite nome e sobrenome')
-    cy.contains('Informe um email válido')
+    cy.contains('Campo obrigatório')
+    cy.contains('Campo obrigatório')
     cy.contains('Você precisa aceitar os termos de uso')
 
 
